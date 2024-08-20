@@ -61,7 +61,7 @@ pref = st.selectbox(
     "Is there a lead star/director in that movie whom you loved and want to see a bit more of???",
     ("Nah...just suggest more movies","Oh...I love that actor/actress","More films by director pls")
 )
-if (pref=="OMG...I love that actor/actress") :
+if (pref=="Oh...I love that actor/actress") :
     actor_choice = st.selectbox(
         "Which one of these???",
         actor
@@ -73,7 +73,7 @@ if (pref=="OMG...I love that actor/actress") :
 
     movie['soup'] = movie.apply(add_actor, axis=1)
 
-if (pref=="More movies made by the director please") :
+if (pref=="More films by director pls") :
     def add_director(row):
         if crew_string in row['crew']:
             row['soup'] = row['soup'] + 2 * (' ' + crew_string)
