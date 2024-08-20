@@ -123,5 +123,5 @@ if st.button("Recommend"):
         movie_2.drop(columns='index',inplace=True)
         recom = improved_recommendations(movie_name,movie_2)
         for i in recom:
-            st.write(i)g
+            st.write(i)
 
