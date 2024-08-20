@@ -31,14 +31,14 @@ def improved_recommendations(title,movies_preprocessed):
     idx = indices[title]
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    sim_scores = sim_scores[1:31]
+    sim_scores = sim_scores[1:26]
     movie_indices = [i[0] for i in sim_scores]
 
     pred = movies_preprocessed.iloc[movie_indices]
     vote_counts = pred['vote_count'].astype('int')
     vote_averages = pred['vote_average'].astype('int')
     c = vote_averages.mean()
-    m = vote_counts.quantile(0.60)
+    m = vote_counts.quantile(0.40)
     qualified = pred[(pred['vote_count'] >= m)]
     qualified['wr'] = qualified.apply(weighted_rating,axis=1)
     qualified_2 = qualified.sort_values('wr', ascending=False).head(10).title
