@@ -59,7 +59,7 @@ crew_string = ', '.join(crew_list)
 
 pref = st.selectbox(
     "Is there a lead star/director in that movie whom you loved and want to see a bit more of???",
-    ("Nah...just suggest more movies","Oh...I love that actor/actress","More films by the director pls")
+    ("Nah...just suggest more movies","Oh...I love that actor/actress","More films by director pls")
 )
 if (pref=="OMG...I love that actor/actress") :
     actor_choice = st.selectbox(
