@@ -58,7 +58,7 @@ crew_list = direct.iloc[0]
 crew_string = ', '.join(crew_list)
 
 pref = st.selectbox(
-    "Is there a lead star/director in that movie whom you loved and want to see a bit more of???",
+    "Is there a lead star/director in that movie whom you love and want to see a bit more of???",
     ("Nah...just suggest similar movies","Oh...I love that actor/actress","More films by director pls")
 )
 if (pref=="Oh...I love that actor/actress") :
